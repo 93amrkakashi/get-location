@@ -62,7 +62,13 @@
             tempInput.select();
             document.execCommand("copy");
             document.body.removeChild(tempInput);
-            alert("تم نسخ بيانات موقعك الحالى ,, يرجى الرجوع الى الاستبيان ولصقها فى الحقل المطلوب" );
+            alert("تم نسخ المعلومات: " + locationText);
+            window.close(); 
+        }
+
+        
+        window.onunload = function() {
+            window.opener && window.opener.focus();
         }
     </script>
 </body>
